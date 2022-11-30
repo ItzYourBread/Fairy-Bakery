@@ -9,4 +9,5 @@ export function ready(client) {
             )
         );
     });
+	console.log(chalk.cyanBright("[Event] ready is loaded"))
 }
