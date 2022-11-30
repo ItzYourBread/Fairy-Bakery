@@ -36,6 +36,9 @@ export { client };
 
 // all listeners here
 listener.ready(client);
+listener.shardReady(client);
+listener.error(client);
+listener.rawWS(client);
 
 // connect to discord api
 client.connect();

@@ -8,5 +8,6 @@ function ready(client) {
         client.editStatus('online', { name: 'Bakery bot!', type: 0 });
         console.log(chalk_1.default.greenBright("[Discord API] " + client.user.username + " is now connected to Discord!"));
     });
+    console.log(chalk_1.default.cyanBright('[Event] ready is loaded'));
 }
 exports.ready = ready;

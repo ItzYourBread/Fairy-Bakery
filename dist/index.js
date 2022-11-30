@@ -32,5 +32,8 @@ var client = new eris_1.Client(process.env.TOKEN, {
 });
 exports.client = client;
 index_1.default.ready(client);
+index_1.default.shardReady(client);
+index_1.default.error(client);
+index_1.default.rawWS(client);
 client.connect();
 console.log(chalk_1.default.blueBright('[System] Loaded.'));
