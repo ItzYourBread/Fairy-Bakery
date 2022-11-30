@@ -2,6 +2,7 @@ import { Client } from 'eris';
 import figlet from 'figlet';
 import chalk from 'chalk';
 import dotenv from 'dotenv';
+import listener from './listeners/index';
 dotenv.config();
 
 console.clear();
@@ -11,7 +12,7 @@ console.log(
     )
 );
 
-console.log('[System] Loading...');
+console.log(chalk.blueBright('[System] Loading...'));
 const client = new Client(process.env.TOKEN, {
     restMode: true,
     autoreconnect: true,
@@ -33,5 +34,9 @@ const client = new Client(process.env.TOKEN, {
 });
 export { client };
 
+// all listeners here
+listener.ready(client);
+
+// connect to discord api
 client.connect();
-console.log('[System] Loaded.');
+console.log(chalk.blueBright('[System] Loaded.'));

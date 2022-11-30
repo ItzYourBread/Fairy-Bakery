@@ -6,10 +6,11 @@ var eris_1 = require("eris");
 var figlet_1 = (0, tslib_1.__importDefault)(require("figlet"));
 var chalk_1 = (0, tslib_1.__importDefault)(require("chalk"));
 var dotenv_1 = (0, tslib_1.__importDefault)(require("dotenv"));
+var index_1 = (0, tslib_1.__importDefault)(require("./listeners/index"));
 dotenv_1.default.config();
 console.clear();
-console.log(chalk_1.default.hex("#FFCF80")(figlet_1.default.textSync('Bakery.', { horizontalLayout: 'full' })));
-console.log("[System] Loading...");
+console.log(chalk_1.default.hex('#FFCF80')(figlet_1.default.textSync('Bakery.', { horizontalLayout: 'full' })));
+console.log(chalk_1.default.blueBright('[System] Loading...'));
 var client = new eris_1.Client(process.env.TOKEN, {
     restMode: true,
     autoreconnect: true,
@@ -30,5 +31,6 @@ var client = new eris_1.Client(process.env.TOKEN, {
     ],
 });
 exports.client = client;
+index_1.default.ready(client);
 client.connect();
-console.log("[System] Loaded.");
+console.log(chalk_1.default.blueBright('[System] Loaded.'));
