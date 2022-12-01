@@ -1,5 +1,6 @@
 import { Client, CommandInteraction } from 'eris';
 import { commands } from '../handlers/commands';
+import { User } from '../database/models/profile';
 import chalk from 'chalk';
 
 export function interactionCreate(client: Client) {
