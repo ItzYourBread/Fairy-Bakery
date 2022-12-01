@@ -3,6 +3,8 @@ import figlet from 'figlet';
 import chalk from 'chalk';
 import dotenv from 'dotenv';
 import listener from './listeners/index';
+import handler from './handlers/index';
+
 dotenv.config();
 
 console.clear();
@@ -39,6 +41,10 @@ listener.ready(client);
 listener.shardReady(client);
 listener.error(client);
 listener.rawWS(client);
+listener.interactionCreate(client);
+
+// all handlers here
+handler.loadCommands(client);
 
 // connect to discord api
 client.connect();
