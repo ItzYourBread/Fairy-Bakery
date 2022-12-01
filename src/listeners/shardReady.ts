@@ -1,6 +1,7 @@
 import chalk from 'chalk';
+import { Client } from 'eris';
 
-export function shardReady(client) {
+export function shardReady(client: Client) {
     client.on('shardReady', (id) => {
         console.log(chalk.yellowBright(`[Shard] ${id} ready!`));
     });

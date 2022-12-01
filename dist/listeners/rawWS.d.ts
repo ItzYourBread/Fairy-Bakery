@@ -1,1 +1,2 @@
-export declare function rawWS(client: any): void;
+import { Client } from 'eris';
+export declare function rawWS(client: Client): void;

@@ -1,3 +1,4 @@
+import { Client } from 'eris';
 declare const commands: any[];
 export { commands };
-export declare function loadCommands(client: any): void;
+export declare function loadCommands(client: Client): void;

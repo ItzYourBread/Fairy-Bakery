@@ -1,6 +1,7 @@
 import chalk from 'chalk';
+import { Client } from 'eris';
 
-export function ready(client) {
+export function ready(client: Client) {
     client.on('ready', () => {
         client.editStatus('online', { name: 'Bakery bot!', type: 0 });
         console.log(

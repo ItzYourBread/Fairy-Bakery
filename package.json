@@ -13,6 +13,7 @@
     "author": "NotRealArif",
     "license": "ISC",
     "devDependencies": {
+        "@types/mongoose": "^5.11.97",
         "@types/node": "^18.11.9",
         "nodemon": "^2.0.20",
         "prettier": "^2.8.0",
@@ -24,6 +25,7 @@
         "dotenv": "^16.0.3",
         "eris": "^0.17.1",
         "figlet": "^1.5.2",
+        "mongoose": "^6.7.5",
         "stubby.ts": "^1.1.0",
         "tslib": "^2.4.1"
     },

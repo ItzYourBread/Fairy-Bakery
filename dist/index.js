@@ -38,5 +38,6 @@ index_1.default.error(client);
 index_1.default.rawWS(client);
 index_1.default.interactionCreate(client);
 index_2.default.loadCommands(client);
+index_2.default.mongodb();
 client.connect();
 console.log(chalk_1.default.blueBright('[System] Loaded.'));

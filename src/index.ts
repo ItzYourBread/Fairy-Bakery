@@ -4,7 +4,6 @@ import chalk from 'chalk';
 import dotenv from 'dotenv';
 import listener from './listeners/index';
 import handler from './handlers/index';
-
 dotenv.config();
 
 console.clear();
@@ -45,6 +44,7 @@ listener.interactionCreate(client);
 
 // all handlers here
 handler.loadCommands(client);
+handler.mongodb();
 
 // connect to discord api
 client.connect();

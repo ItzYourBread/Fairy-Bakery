@@ -4,4 +4,10 @@ import { error } from './error';
 import { rawWS } from './rawWS';
 import { interactionCreate } from './interactionCreate';
 
-export default { ready, shardReady, error, rawWS, interactionCreate };
+export default {
+    ready,
+    shardReady,
+    error,
+    rawWS,
+    interactionCreate,
+};

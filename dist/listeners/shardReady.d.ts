@@ -1,1 +1,2 @@
-export declare function shardReady(client: any): void;
+import { Client } from 'eris';
+export declare function shardReady(client: Client): void;

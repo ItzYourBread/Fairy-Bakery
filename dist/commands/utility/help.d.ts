@@ -3,7 +3,6 @@ declare const _default: {
     data: {
         name: string;
         description: string;
-        type: 1;
     };
     run: (client: Client, interaction: CommandInteraction) => Promise<void>;
 };

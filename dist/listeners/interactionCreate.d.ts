@@ -1,1 +1,2 @@
-export declare function interactionCreate(client: any): void;
+import { Client } from 'eris';
+export declare function interactionCreate(client: Client): void;
