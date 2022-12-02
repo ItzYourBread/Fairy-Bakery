@@ -4,6 +4,7 @@ exports.loadCommands = exports.commands = void 0;
 var tslib_1 = require("tslib");
 var fs_1 = require("fs");
 var chalk_1 = (0, tslib_1.__importDefault)(require("chalk"));
+var dir = 'dist';
 var commands = [];
 exports.commands = commands;
 function loadCommands(client) {
@@ -13,13 +14,13 @@ function loadCommands(client) {
         return (0, tslib_1.__generator)(this, function (_b) {
             switch (_b.label) {
                 case 0:
-                    commandFolders = (0, fs_1.readdirSync)("./dist/commands");
+                    commandFolders = (0, fs_1.readdirSync)("./" + dir + "/commands");
                     _i = 0, commandFolders_1 = commandFolders;
                     _b.label = 1;
                 case 1:
                     if (!(_i < commandFolders_1.length)) return [3, 7];
                     folder = commandFolders_1[_i];
-                    commandFiles = (0, fs_1.readdirSync)("./dist/commands/" + folder).filter(function (file) { return file.endsWith('.js' || '.d.ts'); });
+                    commandFiles = (0, fs_1.readdirSync)("./" + dir + "/commands/" + folder).filter(function (file) { return file.endsWith('.js' || '.d.ts'); });
                     _a = 0, commandFiles_1 = commandFiles;
                     _b.label = 2;
                 case 2:

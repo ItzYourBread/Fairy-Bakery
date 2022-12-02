@@ -4,8 +4,8 @@ import { config } from '../../structures/index';
 
 export default {
     data: {
-        name: 'balance',
-        description: 'Cash!!!',
+        name: 'inventory',
+        description: 'Your inventory',
         options: [
             {
                 name: 'user',
@@ -23,10 +23,13 @@ export default {
         const user = await client.users.get(user_id);
         const Data =
             (await User.findOne({ id: user_id })) || new User({ id: user_id });
-        await interaction.createMessage({
-            content: `**${user.username}** has ${
-                config.emojis.cash
-            }\`${Data.cash.toLocaleString()}\` cash `,
-        });
+
+        let inventory = {
+            title: `${user.username}'s Inventory`,
+            color: Number(config.colour.embed),
+            description: `.map()`,
+            timestamp: new Date(),
+        };
+        await interaction.createMessage({ embeds: [inventory] });
     },
 };
