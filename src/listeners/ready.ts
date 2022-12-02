@@ -3,7 +3,7 @@ import { Client } from 'eris';
 
 export function ready(client: Client) {
     client.on('ready', () => {
-        client.editStatus('online', { name: 'Bakery bot!', type: 0 });
+        client.editStatus('online', { name: 'Fuck Bakery!', type: 0 });
         console.log(
             chalk.greenBright(
                 `[Discord API] ${client.user.username} is now connected to Discord!`
