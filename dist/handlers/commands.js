@@ -20,7 +20,7 @@ function loadCommands(client) {
                 case 1:
                     if (!(_i < commandFolders_1.length)) return [3, 7];
                     folder = commandFolders_1[_i];
-                    commandFiles = (0, fs_1.readdirSync)("./" + dir + "/commands/" + folder).filter(function (file) { return file.endsWith('.js' || '.d.ts'); });
+                    commandFiles = (0, fs_1.readdirSync)("./" + dir + "/commands/" + folder).filter(function (file) { return file.endsWith('.js' || '.ts'); });
                     _a = 0, commandFiles_1 = commandFiles;
                     _b.label = 2;
                 case 2:

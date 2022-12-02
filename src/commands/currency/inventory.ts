@@ -24,10 +24,24 @@ export default {
         const Data =
             (await User.findOne({ id: user_id })) || new User({ id: user_id });
 
+        let Bakeries = '';
+        let Resources = '';
+
         let inventory = {
             title: `${user.username}'s Inventory`,
             color: Number(config.colour.embed),
-            description: `.map()`,
+            fields: [
+                {
+                    name: 'Bakeries',
+                    value: Bakeries,
+                    inline: false,
+                },
+                {
+                    name: 'Resources',
+                    value: Resources,
+                    inline: false,
+                },
+            ],
             timestamp: new Date(),
         };
         await interaction.createMessage({ embeds: [inventory] });

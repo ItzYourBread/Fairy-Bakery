@@ -18,7 +18,7 @@ exports.default = {
         ],
     },
     run: function (client, interaction) { return (0, tslib_1.__awaiter)(void 0, void 0, void 0, function () {
-        var user_id, user, Data, inventory;
+        var user_id, user, Data, Bakeries, Resources, inventory;
         return (0, tslib_1.__generator)(this, function (_a) {
             switch (_a.label) {
                 case 0:
@@ -31,10 +31,23 @@ exports.default = {
                     return [4, profile_1.User.findOne({ id: user_id })];
                 case 2:
                     Data = (_a.sent()) || new profile_1.User({ id: user_id });
+                    Bakeries = '';
+                    Resources = '';
                     inventory = {
                         title: user.username + "'s Inventory",
                         color: Number(index_1.config.colour.embed),
-                        description: ".map()",
+                        fields: [
+                            {
+                                name: 'Bakeries',
+                                value: Bakeries,
+                                inline: false,
+                            },
+                            {
+                                name: 'Resources',
+                                value: Resources,
+                                inline: false,
+                            },
+                        ],
                         timestamp: new Date(),
                     };
                     return [4, interaction.createMessage({ embeds: [inventory] })];

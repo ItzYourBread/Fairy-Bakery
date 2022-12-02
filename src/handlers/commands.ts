@@ -2,7 +2,7 @@ import { readdirSync } from 'fs';
 import chalk from 'chalk';
 import { Client } from 'eris';
 
-const dir = 'dist';
+let dir = 'dist';
 
 const commands = [];
 export { commands };
@@ -13,7 +13,7 @@ export function loadCommands(client: Client) {
         for (const folder of commandFolders) {
             const commandFiles = readdirSync(
                 `./${dir}/commands/${folder}`
-            ).filter((file) => file.endsWith('.js' || '.d.ts'));
+            ).filter((file) => file.endsWith('.js' || '.ts'));
             for (const file of commandFiles) {
                 const slashCommandObject = await import(
                     `../commands/${folder}/${file}`
