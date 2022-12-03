@@ -17,6 +17,11 @@ exports.default = {
                         color: Number(index_1.config.colour.embed),
                         fields: [
                             {
+                                name: "Currency",
+                                value: "`balance`, `inventory`",
+                                inline: false
+                            },
+                            {
                                 name: 'Misc',
                                 value: '`ping`',
                                 inline: false,
@@ -27,6 +32,9 @@ exports.default = {
                                 inline: false,
                             },
                         ],
+                        footer: {
+                            text: "Powered by Creative.co"
+                        },
                         timestamp: new Date(),
                     };
                     return [4, interaction.createMessage({ embeds: [commands] })];

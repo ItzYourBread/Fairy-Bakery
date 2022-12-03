@@ -33,6 +33,12 @@ exports.default = {
                     Data = (_a.sent()) || new profile_1.User({ id: user_id });
                     Bakeries = '';
                     Resources = '';
+                    if (!Bakeries) {
+                        Bakeries = 'empty';
+                    }
+                    if (!Resources) {
+                        Resources = 'empty';
+                    }
                     inventory = {
                         title: user.username + "'s Inventory",
                         color: Number(index_1.config.colour.embed),
@@ -53,6 +59,8 @@ exports.default = {
                     return [4, interaction.createMessage({ embeds: [inventory] })];
                 case 3:
                     _a.sent();
+                    Bakeries = '';
+                    Resources = '';
                     return [2];
             }
         });

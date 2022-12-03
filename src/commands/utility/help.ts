@@ -12,6 +12,11 @@ export default {
             color: Number(config.colour.embed),
             fields: [
                 {
+                    name: 'Currency',
+                    value: '`balance`, `inventory`',
+                    inline: false,
+                },
+                {
                     name: 'Misc',
                     value: '`ping`',
                     inline: false,
@@ -22,6 +27,9 @@ export default {
                     inline: false,
                 },
             ],
+            footer: {
+                text: 'Powered by Creative.co',
+            },
             timestamp: new Date(),
         };
         await interaction.createMessage({ embeds: [commands] });

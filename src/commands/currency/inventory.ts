@@ -27,6 +27,13 @@ export default {
         let Bakeries = '';
         let Resources = '';
 
+        if (!Bakeries) {
+            Bakeries = 'empty';
+        }
+        if (!Resources) {
+            Resources = 'empty';
+        }
+
         let inventory = {
             title: `${user.username}'s Inventory`,
             color: Number(config.colour.embed),
@@ -45,5 +52,7 @@ export default {
             timestamp: new Date(),
         };
         await interaction.createMessage({ embeds: [inventory] });
+        Bakeries = '';
+        Resources = '';
     },
 };

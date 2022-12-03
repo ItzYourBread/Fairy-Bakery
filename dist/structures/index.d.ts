@@ -1,2 +1,3 @@
 import * as config from '../config.json';
-export { config };
+import { ComponentCollector } from './collectors/component';
+export { config, ComponentCollector };
