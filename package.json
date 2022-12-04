@@ -7,20 +7,12 @@
     "scripts": {
         "start": "node dist/index",
         "build": "tsc",
-        "dev": "nodemon dist/index",
+        "dev": "ts-node src/index",
         "format": "prettier --write \"./**/*.ts\" \"./**/*.json\""
     },
     "keywords": [],
     "author": "NotRealArif",
     "license": "ISC",
-    "devDependencies": {
-        "@types/mongoose": "^5.11.97",
-        "@types/node": "^18.11.9",
-        "nodemon": "^2.0.20",
-        "prettier": "^2.8.0",
-        "ts-node": "^10.9.1",
-        "typescript": "^4.9.3"
-    },
     "dependencies": {
         "chalk": "^4.0.0",
         "dotenv": "^16.0.3",
@@ -30,6 +22,7 @@
         "figlet": "^1.5.2",
         "mongoose": "^6.7.5",
         "path": "^0.12.7",
+        "require-dir": "^1.2.0",
         "stubby.ts": "^1.2.0",
         "tslib": "^2.4.1"
     },
@@ -40,5 +33,13 @@
     "bugs": {
         "url": "https://github.com/NotRealArif/Bakery-Bot/issues"
     },
-    "homepage": "https://github.com/NotRealArif/Bakery-Bot#readme"
+    "homepage": "https://github.com/NotRealArif/Bakery-Bot#readme",
+    "devDependencies": {
+        "@types/mongoose": "^5.11.97",
+        "@types/node": "^18.11.9",
+        "nodemon": "^2.0.20",
+        "prettier": "^2.8.0",
+        "ts-node": "^10.9.1",
+        "typescript": "^4.9.3"
+    }
 }
