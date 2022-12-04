@@ -1,6 +1,8 @@
 import { Constants, Client, CommandInteraction } from 'eris';
+import { SmallNumber } from 'stubby.ts';
 import { User } from '../../database/models/profile';
 import { config } from '../../structures/index';
+import { bakeries } from '../../data/inventory/bakeries.json';
 
 export default {
     data: {
@@ -26,31 +28,43 @@ export default {
 
         let Bakeries = '';
         let Resources = '';
+        let digits = '';
+        bakeries.map((e) => {
+            if (Data.bakeries[e.value] && Data.bakeries[e.value] >= 1) {
+                digits += `${Data.bakeries[e.value]}`;
+                Bakeries += `${config.emojis[e.emoji]}${SmallNumber(
+                    Data.bakeries[e.value],
+                    digits.length + 1
+                )}`;
+            }
+        });
 
-        if (!Bakeries) {
-            Bakeries = 'empty';
-        }
-        if (!Resources) {
-            Resources = 'empty';
+        if (!Bakeries && !Resources) {
+            var msg = 'ᴇᴍᴘᴛʏ';
         }
 
         let inventory = {
-            title: `${user.username}'s Inventory`,
+            title: `${user.username} 's Inventory`,
             color: Number(config.colour.embed),
-            fields: [
-                {
-                    name: 'Bakeries',
-                    value: Bakeries,
-                    inline: false,
-                },
-                {
-                    name: 'Resources',
-                    value: Resources,
-                    inline: false,
-                },
-            ],
+            description: msg,
+            fields: [],
             timestamp: new Date(),
         };
+        if (Bakeries) {
+            inventory.fields.push({
+                name: 'Bakeries',
+                value: Bakeries,
+                inline: true,
+            });
+        }
+        if (Resources) {
+            inventory.fields.push({
+                name: 'Resources',
+                value: Resources,
+                inline: true,
+            });
+        }
+
         await interaction.createMessage({ embeds: [inventory] });
         Bakeries = '';
         Resources = '';

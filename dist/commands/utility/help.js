@@ -17,9 +17,9 @@ exports.default = {
                         color: Number(index_1.config.colour.embed),
                         fields: [
                             {
-                                name: "Currency",
-                                value: "`balance`, `inventory`",
-                                inline: false
+                                name: 'Currency',
+                                value: '`balance`, `inventory`',
+                                inline: false,
                             },
                             {
                                 name: 'Misc',
@@ -33,7 +33,7 @@ exports.default = {
                             },
                         ],
                         footer: {
-                            text: "Powered by Creative.co"
+                            text: 'Powered by Creative.co',
                         },
                         timestamp: new Date(),
                     };

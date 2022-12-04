@@ -1,6 +1,7 @@
-import { config, ComponentCollector } from '../../structures/index';
+import { config } from '../../structures/index';
 import Eris from 'eris';
 import { Constants, Client, CommandInteraction } from 'eris';
+import { MessageCollector } from 'eris-collector';
 
 export default {
     data: {
@@ -32,20 +33,16 @@ export default {
             components: [buttons],
         });
 
-        const collector = new ComponentCollector(interaction.channel, {
-            filter: (i) =>
-                i.user?.id === interaction.user?.id &&
-                ['btn-prev', 'btn-next'].includes(i.data.custom_id) &&
-                i.data.component_type === 2,
-            timeout: 2000,
+        const collector = new MessageCollector(client, interaction.channel, {
+            time: 1000 * 2,
         });
 
-        collector.on('collect', async (i: CommandInteraction) => {
-            console.log('Works');
-        });
-
-        collector.once('end', async (i: CommandInteraction) => {
-            console.log('Ended collections');
+        collector.on('collect', async (i: Eris.ComponentInteraction) => {
+            if (i.data.custom_id === 'clickme') {
+                i.createMessage({
+                    content: 'works!!!',
+                });
+            }
         });
     },
 };

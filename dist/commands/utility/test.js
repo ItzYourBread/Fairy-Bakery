@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
 var index_1 = require("../../structures/index");
 var eris_1 = require("eris");
+var eris_collector_1 = require("eris-collector");
 exports.default = {
     data: {
         name: 'test',
@@ -37,24 +38,16 @@ exports.default = {
                         })];
                 case 1:
                     _a.sent();
-                    collector = new index_1.ComponentCollector(interaction.channel, {
-                        filter: function (i) {
-                            var _a, _b;
-                            return ((_a = i.user) === null || _a === void 0 ? void 0 : _a.id) === ((_b = interaction.user) === null || _b === void 0 ? void 0 : _b.id) &&
-                                ["btn-prev", "btn-next"].includes(i.data.custom_id) &&
-                                i.data.component_type === 2;
-                        },
-                        timeout: 2000,
+                    collector = new eris_collector_1.MessageCollector(client, interaction.channel, {
+                        time: 1000 * 2,
                     });
                     collector.on('collect', function (i) { return (0, tslib_1.__awaiter)(void 0, void 0, void 0, function () {
                         return (0, tslib_1.__generator)(this, function (_a) {
-                            console.log('Works');
-                            return [2];
-                        });
-                    }); });
-                    collector.once('end', function (i) { return (0, tslib_1.__awaiter)(void 0, void 0, void 0, function () {
-                        return (0, tslib_1.__generator)(this, function (_a) {
-                            console.log("Ended collections");
+                            if (i.data.custom_id === 'clickme') {
+                                i.createMessage({
+                                    content: 'works!!!',
+                                });
+                            }
                             return [2];
                         });
                     }); });
