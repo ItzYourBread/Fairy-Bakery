@@ -1,0 +1,15 @@
+{
+    "bot": {
+        "name": "Bakery"
+    },
+    "colour": {
+        "embed": "0xFFCF80"
+    },
+    "emojis": {
+        "cash": "💸",
+        "biscuit": "🍪"
+    },
+    "database": {
+        "mongoDB": "mongodb+srv://BakeryBot:newjIv-xorroc-3qewwu@cluster0.uedwz7l.mongodb.net/?retryWrites=true&w=majority"
+    }
+}

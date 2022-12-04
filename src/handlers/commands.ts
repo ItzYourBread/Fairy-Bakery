@@ -1,17 +1,16 @@
 import { readdirSync } from 'fs';
 import chalk from 'chalk';
 import { Client } from 'eris';
-const dir = "dist"
 
 const commands = [];
 export { commands };
 
 export function loadCommands(client: Client) {
     client.on('ready', async () => {
-        const commandFolders = readdirSync(`./${dir}/commands`);
+        const commandFolders = readdirSync(`./dist/commands`);
         for (const folder of commandFolders) {
             const commandFiles = readdirSync(
-                `./${dir}/commands/${folder}`
+                `./dist/commands/${folder}`
             ).filter((file) => file.endsWith('.js'));
             for (const file of commandFiles) {
                 const slashCommandObject = await import(
