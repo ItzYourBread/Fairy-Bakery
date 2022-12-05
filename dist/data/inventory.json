@@ -6,5 +6,11 @@
             "value": "biscuits"
         }
     ],
-    "resources": []
+    "resources": [
+        {
+            "name": "Wheat",
+            "emoji": "wheat",
+            "value": "wheats"
+        }
+    ]
 }

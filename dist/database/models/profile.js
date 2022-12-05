@@ -9,6 +9,9 @@ var Profile = new mongoose_1.default.Schema({
     bakeries: {
         biscuits: { type: Number, default: 0 },
     },
+    resources: {
+        wheats: { type: Number, default: 0 },
+    },
 });
 var User = mongoose_1.default.model('Profile', Profile);
 exports.User = User;

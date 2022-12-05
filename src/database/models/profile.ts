@@ -6,6 +6,9 @@ const Profile = new mongoose.Schema({
     bakeries: {
         biscuits: { type: Number, default: 0 },
     },
+    resources: {
+        wheats: { type: Number, default: 0 },
+    },
 });
 
 const User = mongoose.model('Profile', Profile);

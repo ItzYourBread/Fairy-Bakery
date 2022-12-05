@@ -7,7 +7,8 @@
     },
     "emojis": {
         "cash": "💸",
-        "biscuit": "🍪"
+        "biscuit": "🍪",
+        "wheat": "🌾"
     },
     "database": {
         "mongoDB": "mongodb+srv://BakeryBot:newjIv-xorroc-3qewwu@cluster0.uedwz7l.mongodb.net/?retryWrites=true&w=majority"

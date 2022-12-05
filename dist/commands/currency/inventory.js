@@ -40,6 +40,11 @@ exports.default = {
                             Bakeries += "" + index_1.config.emojis[e.emoji] + (0, stubby_ts_1.SmallNumber)(Data.bakeries[e.value], Data.bakeries[e.value].toString().length + 1) + "  ";
                         }
                     });
+                    inventory_json_1.resources.map(function (e) {
+                        if (Data.resources[e.value] && Data.resources[e.value] >= 1) {
+                            Resources += "" + index_1.config.emojis[e.emoji] + (0, stubby_ts_1.SmallNumber)(Data.resources[e.value], Data.resources[e.value].toString().length + 1) + "  ";
+                        }
+                    });
                     if (!Bakeries && !Resources) {
                         msg = 'ᴇᴍᴘᴛʏ';
                     }

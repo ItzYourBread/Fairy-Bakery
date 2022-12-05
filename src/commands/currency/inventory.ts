@@ -2,7 +2,7 @@ import { Constants, Client, CommandInteraction } from 'eris';
 import { SmallNumber } from 'stubby.ts';
 import { User } from '../../database/models/profile';
 import { config } from '../../structures/index';
-import { bakeries } from '../../data/inventory.json';
+import { bakeries, resources } from '../../data/inventory.json';
 
 export default {
     data: {
@@ -33,6 +33,14 @@ export default {
                 Bakeries += `${config.emojis[e.emoji]}${SmallNumber(
                     Data.bakeries[e.value],
                     Data.bakeries[e.value].toString().length + 1
+                )} \ `;
+            }
+        });
+        resources.map((e) => {
+            if (Data.resources[e.value] && Data.resources[e.value] >= 1) {
+                Resources += `${config.emojis[e.emoji]}${SmallNumber(
+                    Data.resources[e.value],
+                    Data.resources[e.value].toString().length + 1
                 )} \ `;
             }
         });

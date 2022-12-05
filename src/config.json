@@ -9,7 +9,9 @@
 
     "emojis": {
         "cash": "💸",
-        "biscuit": "🍪"
+        "biscuit": "🍪",
+
+        "wheat": "🌾"
     },
 
     "database": {
