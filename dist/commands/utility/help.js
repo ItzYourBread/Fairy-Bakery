@@ -17,6 +17,11 @@ exports.default = {
                         color: Number(index_1.config.colour.embed),
                         fields: [
                             {
+                                name: 'Social',
+                                value: 'soon',
+                                inline: false,
+                            },
+                            {
                                 name: 'Currency',
                                 value: '`balance`, `inventory`',
                                 inline: false,

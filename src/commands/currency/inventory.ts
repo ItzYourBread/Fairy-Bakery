@@ -30,7 +30,7 @@ export default {
         let Resources = '';
         bakeries.map((e) => {
             if (Data.bakeries[e.value] && Data.bakeries[e.value] >= 1) {
-                Bakeries += `${config.emojis[e.emoji]}${SmallNumber(
+                Bakeries += `${config.emoji[e.emoji]}${SmallNumber(
                     Data.bakeries[e.value],
                     Data.bakeries[e.value].toString().length + 1
                 )} \ `;
@@ -38,7 +38,7 @@ export default {
         });
         resources.map((e) => {
             if (Data.resources[e.value] && Data.resources[e.value] >= 1) {
-                Resources += `${config.emojis[e.emoji]}${SmallNumber(
+                Resources += `${config.emoji[e.emoji]}${SmallNumber(
                     Data.resources[e.value],
                     Data.resources[e.value].toString().length + 1
                 )} \ `;

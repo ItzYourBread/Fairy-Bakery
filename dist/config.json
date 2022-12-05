@@ -3,9 +3,10 @@
         "name": "Bakery"
     },
     "colour": {
-        "embed": "0xFFCF80"
+        "embed": "0xFFCF80",
+        "danger": "0xFF3434"
     },
-    "emojis": {
+    "emoji": {
         "cash": "💸",
         "biscuit": "🍪",
         "wheat": "🌾"
