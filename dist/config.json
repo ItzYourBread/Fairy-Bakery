@@ -7,11 +7,11 @@
         "danger": "0xFF3434"
     },
     "emoji": {
-        "cash": "💸",
+        "cash": "<:bakerycash:1049562803918352488>",
         "biscuit": "🍪",
         "wheat": "🌾"
     },
     "database": {
-        "mongoDB": "mongodb+srv://BakeryBot:newjIv-xorroc-3qewwu@cluster0.uedwz7l.mongodb.net/?retryWrites=true&w=majority"
+        "mongoDB": ""
     }
 }

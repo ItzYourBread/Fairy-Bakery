@@ -1,10 +1,10 @@
 import mongoose from 'mongoose';
 import chalk from 'chalk';
-import { config } from '../structures/index';
+import 'config/dotenv'
 
 export function mongodb() {
     mongoose
-        .connect(config.database.mongoDB)
+        .connect(process.env.DATABASE)
         .then(() => {
             console.log(chalk.greenBright('[Database] Connected'));
         })

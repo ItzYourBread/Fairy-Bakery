@@ -4,10 +4,10 @@ exports.mongodb = void 0;
 var tslib_1 = require("tslib");
 var mongoose_1 = (0, tslib_1.__importDefault)(require("mongoose"));
 var chalk_1 = (0, tslib_1.__importDefault)(require("chalk"));
-var index_1 = require("../structures/index");
+require("config/dotenv");
 function mongodb() {
     mongoose_1.default
-        .connect(index_1.config.database.mongoDB)
+        .connect(process.env.DATABASE)
         .then(function () {
         console.log(chalk_1.default.greenBright('[Database] Connected'));
     })
