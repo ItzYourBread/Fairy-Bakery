@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 import chalk from 'chalk';
-import 'config/dotenv'
+import 'dotenv/config'
 
 export function mongodb() {
     mongoose

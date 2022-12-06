@@ -1,10 +1,9 @@
 import { Client } from 'eris';
 import figlet from 'figlet';
 import chalk from 'chalk';
-import dotenv from 'dotenv';
+import 'dotenv/config';
 import listener from './listeners/index';
 import handler from './handlers/index';
-dotenv.config();
 
 console.clear();
 console.log(
