@@ -2,12 +2,12 @@
     "name": "bakery",
     "version": "0.1.0",
     "description": "No idea",
-    "main": "./dist/index.js",
-    "types": "./dist/index.d.ts",
+    "main": "./dist/bakery.js",
+    "types": "./dist/bakery.d.ts",
     "scripts": {
-        "start": "node dist/index",
+        "start": "node dist/bakery",
         "build": "tsc",
-        "dev": "nodemon dist/index",
+        "dev": "nodemon dist/bakery",
         "format": "prettier --write \"./**/*.ts\" \"./**/*.json\""
     },
     "keywords": [],

@@ -32,7 +32,6 @@ const client = new Client(process.env.TOKEN, {
         'guildEmojis',
     ],
 });
-export { client };
 
 // all listeners here
 listener.ready(client);

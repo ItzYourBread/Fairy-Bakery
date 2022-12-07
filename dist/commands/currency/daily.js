@@ -25,7 +25,7 @@ exports.default = {
                                         description: "You already claimed your daily reward today!\nYour next daily <t:" + (Math.floor(Data.daily.time / 1000) + 3600) + ":R>",
                                     },
                                 ],
-                                flags: 64
+                                flags: 64,
                             })];
                     }
                     if (Date.now() - Data.daily.time > 172800000) {

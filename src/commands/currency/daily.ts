@@ -22,7 +22,7 @@ export default {
                         }:R>`,
                     },
                 ],
-				flags: 64
+                flags: 64,
             });
         }
 

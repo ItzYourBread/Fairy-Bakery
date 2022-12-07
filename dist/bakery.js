@@ -1,6 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.client = void 0;
 var tslib_1 = require("tslib");
 var eris_1 = require("eris");
 var figlet_1 = (0, tslib_1.__importDefault)(require("figlet"));
@@ -30,7 +29,6 @@ var client = new eris_1.Client(process.env.TOKEN, {
         'guildEmojis',
     ],
 });
-exports.client = client;
 index_1.default.ready(client);
 index_1.default.shardReady(client);
 index_1.default.error(client);
