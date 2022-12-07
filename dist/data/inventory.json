@@ -1,0 +1,16 @@
+{
+    "bakeries": [
+        {
+            "name": "Biscuit",
+            "emoji": "biscuit",
+            "value": "biscuits"
+        }
+    ],
+    "resources": [
+        {
+            "name": "Wheat",
+            "emoji": "wheat",
+            "value": "wheats"
+        }
+    ]
+}

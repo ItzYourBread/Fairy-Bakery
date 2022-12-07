@@ -1,0 +1,21 @@
+{
+    "bot": {
+        "name": "Bakery"
+    },
+
+    "colour": {
+        "embed": "0xFFCF80",
+        "danger": "0xFF3434"
+    },
+
+    "emoji": {
+        "cash": "<:bakerycash:1049562803918352488>",
+        "biscuit": "🍪",
+
+        "wheat": "🌾"
+    },
+
+    "database": {
+        "mongoDB": ""
+    }
+}
