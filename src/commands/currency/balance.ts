@@ -25,8 +25,8 @@ export default {
             (await User.findOne({ id: user_id })) || new User({ id: user_id });
         await interaction.createMessage({
             content: `**${user.username}** has ${
-                config.emoji.cash
-            }\`${Data.cash.toLocaleString()}\` cash `,
+                config.emoji.coin
+            }\`${Data.coin.toLocaleString()}\` coin `,
         });
     },
 };

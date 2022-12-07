@@ -1,17 +1,31 @@
 {
     "bakeries": [
-        {
-            "name": "Biscuit",
-            "emoji": "biscuit",
-            "value": "biscuits"
-        }
     ],
-
-    "resources": [
-        {
-            "name": "Wheat",
-            "emoji": "wheat",
-            "value": "wheats"
-        }
+    "stocks": [
+		{
+			"name": "Milk",
+			"emoji": "milk",
+			"value": "milks"
+		},
+		{
+			"name": "Egg",
+			"emoji": "egg",
+			"value": "eggs"
+		},
+		{
+			"name": "Sugar",
+			"emoji": "sugar",
+			"value": "sugars"
+		},
+		{
+			"name": "Chocolate",
+			"emoji": "chocolate",
+			"value": "chocolates"
+		},
+		{
+			"name": "Cream",
+			"emoji": "cream",
+			"value": "creams"
+		}
     ]
 }

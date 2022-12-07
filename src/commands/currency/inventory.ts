@@ -2,7 +2,7 @@ import { Constants, Client, CommandInteraction } from 'eris';
 import { SmallNumber } from 'stubby.ts';
 import { User } from '../../database/models/profile';
 import { config } from '../../structures/index';
-import { bakeries, resources } from '../../data/inventory.json';
+import { bakeries, stocks } from '../../data/inventory.json';
 
 export default {
     data: {
@@ -27,7 +27,7 @@ export default {
             (await User.findOne({ id: user_id })) || new User({ id: user_id });
 
         let Bakeries = '';
-        let Resources = '';
+        let Stocks = '';
         bakeries.map((e) => {
             if (Data.bakeries[e.value] && Data.bakeries[e.value] >= 1) {
                 Bakeries += `${config.emoji[e.emoji]}${SmallNumber(
@@ -36,16 +36,16 @@ export default {
                 )} \ `;
             }
         });
-        resources.map((e) => {
-            if (Data.resources[e.value] && Data.resources[e.value] >= 1) {
-                Resources += `${config.emoji[e.emoji]}${SmallNumber(
-                    Data.resources[e.value],
-                    Data.resources[e.value].toString().length + 1
+        stocks.map((e) => {
+            if (Data.stocks[e.value] && Data.stocks[e.value] >= 1) {
+                Stocks += `${config.emoji[e.emoji]}${SmallNumber(
+                    Data.stocks[e.value],
+                    Data.stocks[e.value].toString().length + 1
                 )} \ `;
             }
         });
 
-        if (!Bakeries && !Resources) {
+        if (!Bakeries && !Stocks) {
             var msg = 'ᴇᴍᴘᴛʏ';
         }
 
@@ -63,16 +63,16 @@ export default {
                 inline: true,
             });
         }
-        if (Resources) {
+        if (Stocks) {
             inventory.fields.push({
-                name: 'Resources',
-                value: Resources,
+                name: 'Stocks',
+                value: Stocks,
                 inline: true,
             });
         }
 
         await interaction.createMessage({ embeds: [inventory] });
         Bakeries = '';
-        Resources = '';
+        Stocks = '';
     },
 };

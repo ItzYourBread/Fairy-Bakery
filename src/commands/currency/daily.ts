@@ -32,22 +32,22 @@ export default {
             Data.daily.streak += 1;
         }
 
-        let cash = 200;
+        let coin = 75;
         let streak = Data.daily.streak;
-        const bonus = Math.round(0.02 * cash * streak);
+        const bonus = Math.round(0.02 * coin * streak);
         if (streak > 1) {
-            cash = cash + bonus;
+            coin = coin + bonus;
         }
         let dailyReset = new Date();
 
-        Data.cash += cash;
+        Data.coin += coin;
         Data.daily.time = dailyReset.setUTCHours(23, 59, 59, 999);
         Data.save();
 
         let reward = {
             title: `${user.username}'s Daily`,
             color: Number(config.colour.embed),
-            description: `You received ${config.emoji.cash}\`${cash}\` and added to your profile!`,
+            description: `You received ${config.emoji.coin}\`${coin}\` and added to your profile!`,
             fields: [
                 {
                     name: 'Streak',

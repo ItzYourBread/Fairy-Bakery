@@ -20,7 +20,7 @@ exports.default = {
         ],
     },
     run: function (client, interaction) { return (0, tslib_1.__awaiter)(void 0, void 0, void 0, function () {
-        var user_id, user, Data, Bakeries, Resources, msg, inventory;
+        var user_id, user, Data, Bakeries, Stocks, msg, inventory;
         return (0, tslib_1.__generator)(this, function (_a) {
             switch (_a.label) {
                 case 0:
@@ -34,18 +34,18 @@ exports.default = {
                 case 2:
                     Data = (_a.sent()) || new profile_1.User({ id: user_id });
                     Bakeries = '';
-                    Resources = '';
+                    Stocks = '';
                     inventory_json_1.bakeries.map(function (e) {
                         if (Data.bakeries[e.value] && Data.bakeries[e.value] >= 1) {
                             Bakeries += "" + index_1.config.emoji[e.emoji] + (0, stubby_ts_1.SmallNumber)(Data.bakeries[e.value], Data.bakeries[e.value].toString().length + 1) + "  ";
                         }
                     });
-                    inventory_json_1.resources.map(function (e) {
-                        if (Data.resources[e.value] && Data.resources[e.value] >= 1) {
-                            Resources += "" + index_1.config.emoji[e.emoji] + (0, stubby_ts_1.SmallNumber)(Data.resources[e.value], Data.resources[e.value].toString().length + 1) + "  ";
+                    inventory_json_1.stocks.map(function (e) {
+                        if (Data.stocks[e.value] && Data.stocks[e.value] >= 1) {
+                            Stocks += "" + index_1.config.emoji[e.emoji] + (0, stubby_ts_1.SmallNumber)(Data.stocks[e.value], Data.stocks[e.value].toString().length + 1) + "  ";
                         }
                     });
-                    if (!Bakeries && !Resources) {
+                    if (!Bakeries && !Stocks) {
                         msg = 'ᴇᴍᴘᴛʏ';
                     }
                     inventory = {
@@ -62,10 +62,10 @@ exports.default = {
                             inline: true,
                         });
                     }
-                    if (Resources) {
+                    if (Stocks) {
                         inventory.fields.push({
-                            name: 'Resources',
-                            value: Resources,
+                            name: 'Stocks',
+                            value: Stocks,
                             inline: true,
                         });
                     }
@@ -73,7 +73,7 @@ exports.default = {
                 case 3:
                     _a.sent();
                     Bakeries = '';
-                    Resources = '';
+                    Stocks = '';
                     return [2];
             }
         });

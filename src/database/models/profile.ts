@@ -3,7 +3,7 @@ import mongoose, { Schema, Document } from 'mongoose';
 // --- Data Interface ---
 export interface IUser extends Document {
     id: string;
-    cash: number;
+    coin: number;
     daily: {
         time: number;
         streak: number;
@@ -11,15 +11,19 @@ export interface IUser extends Document {
     bakeries: {
         biscuits: number;
     };
-    resources: {
-        wheats: number;
+    stocks: {
+        milks: number;
+		eggs: number,
+		sugars: number,
+		chocolates: number,
+		creams: number,
     };
 }
 
 // --- Data Schema ---
 const Profile: Schema = new Schema({
     id: { type: String, unique: true, required: true },
-    cash: { type: Number, default: 100 },
+    coin: { type: Number, default: 100 },
     daily: {
         time: { type: Date, default: new Date() },
         streak: { type: Number, default: 0 },
@@ -27,8 +31,12 @@ const Profile: Schema = new Schema({
     bakeries: {
         biscuits: { type: Number, default: 0 },
     },
-    resources: {
-        wheats: { type: Number, default: 0 },
+    stocks: {
+        milks: { type: Number, default: 0 },
+		eggs: { type: Number, default: 0 },
+		sugars: { type: Number, default: 0},
+		chocolates: { type: Number, default: 0},
+		creams: { type: Number, default: 0}
     },
 });
 

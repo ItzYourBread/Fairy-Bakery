@@ -32,7 +32,7 @@ exports.default = {
                 case 2:
                     Data = (_a.sent()) || new profile_1.User({ id: user_id });
                     return [4, interaction.createMessage({
-                            content: "**" + user.username + "** has " + index_1.config.emoji.cash + "`" + Data.cash.toLocaleString() + "` cash ",
+                            content: "**" + user.username + "** has " + index_1.config.emoji.coin + "`" + Data.coin.toLocaleString() + "` coin ",
                         })];
                 case 3:
                     _a.sent();

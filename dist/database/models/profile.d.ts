@@ -1,7 +1,7 @@
 import mongoose, { Document } from 'mongoose';
 export interface IUser extends Document {
     id: string;
-    cash: number;
+    coin: number;
     daily: {
         time: number;
         streak: number;
@@ -9,8 +9,12 @@ export interface IUser extends Document {
     bakeries: {
         biscuits: number;
     };
-    resources: {
-        wheats: number;
+    stocks: {
+        milks: number;
+        eggs: number;
+        sugars: number;
+        chocolates: number;
+        creams: number;
     };
 }
 declare const User: mongoose.Model<IUser, {}, {}, {}, any>;

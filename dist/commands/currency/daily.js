@@ -9,7 +9,7 @@ exports.default = {
         description: 'Get your daily reward!',
     },
     run: function (client, interaction) { return (0, tslib_1.__awaiter)(void 0, void 0, void 0, function () {
-        var user, Data, cash, streak, bonus, dailyReset, reward;
+        var user, Data, coin, streak, bonus, dailyReset, reward;
         return (0, tslib_1.__generator)(this, function (_a) {
             switch (_a.label) {
                 case 0:
@@ -34,20 +34,20 @@ exports.default = {
                     else {
                         Data.daily.streak += 1;
                     }
-                    cash = 200;
+                    coin = 75;
                     streak = Data.daily.streak;
-                    bonus = Math.round(0.02 * cash * streak);
+                    bonus = Math.round(0.02 * coin * streak);
                     if (streak > 1) {
-                        cash = cash + bonus;
+                        coin = coin + bonus;
                     }
                     dailyReset = new Date();
-                    Data.cash += cash;
+                    Data.coin += coin;
                     Data.daily.time = dailyReset.setUTCHours(23, 59, 59, 999);
                     Data.save();
                     reward = {
                         title: user.username + "'s Daily",
                         color: Number(index_1.config.colour.embed),
-                        description: "You received " + index_1.config.emoji.cash + "`" + cash + "` and added to your profile!",
+                        description: "You received " + index_1.config.emoji.coin + "`" + coin + "` and added to your profile!",
                         fields: [
                             {
                                 name: 'Streak',

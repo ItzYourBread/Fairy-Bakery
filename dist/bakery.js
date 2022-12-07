@@ -8,7 +8,7 @@ require("dotenv/config");
 var index_1 = (0, tslib_1.__importDefault)(require("./listeners/index"));
 var index_2 = (0, tslib_1.__importDefault)(require("./handlers/index"));
 console.clear();
-console.log(chalk_1.default.hex('#FFCF80')(figlet_1.default.textSync('Bakery.', { horizontalLayout: 'full' })));
+console.log(chalk_1.default.hex('#FFCF80')(figlet_1.default.textSync('System.', { horizontalLayout: 'full' })));
 require("./api/api");
 console.log(chalk_1.default.blueBright('[System] Loading...'));
 var client = new eris_1.Client(process.env.TOKEN, {
