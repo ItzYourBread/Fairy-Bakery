@@ -11,6 +11,7 @@ console.log(
         figlet.textSync('Bakery.', { horizontalLayout: 'full' })
     )
 );
+import './api/api';
 
 console.log(chalk.blueBright('[System] Loading...'));
 const client = new Client(process.env.TOKEN, {

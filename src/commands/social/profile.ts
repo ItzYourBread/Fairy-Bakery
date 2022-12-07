@@ -102,7 +102,7 @@ export default {
             await interaction.editOriginalMessage({
                 components: [],
             });
-			console.log("Collector ended!")
+            console.log('Collector ended!');
         }, 4000);
     },
 };

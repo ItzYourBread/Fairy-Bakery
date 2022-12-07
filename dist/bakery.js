@@ -2,13 +2,14 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
 var eris_1 = require("eris");
-var figlet_1 = (0, tslib_1.__importDefault)(require("figlet"));
-var chalk_1 = (0, tslib_1.__importDefault)(require("chalk"));
+var figlet_1 = tslib_1.__importDefault(require("figlet"));
+var chalk_1 = tslib_1.__importDefault(require("chalk"));
 require("dotenv/config");
-var index_1 = (0, tslib_1.__importDefault)(require("./listeners/index"));
-var index_2 = (0, tslib_1.__importDefault)(require("./handlers/index"));
+var index_1 = tslib_1.__importDefault(require("./listeners/index"));
+var index_2 = tslib_1.__importDefault(require("./handlers/index"));
 console.clear();
 console.log(chalk_1.default.hex('#FFCF80')(figlet_1.default.textSync('Bakery.', { horizontalLayout: 'full' })));
+require("./api/api");
 console.log(chalk_1.default.blueBright('[System] Loading...'));
 var client = new eris_1.Client(process.env.TOKEN, {
     restMode: true,
