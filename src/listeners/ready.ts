@@ -4,7 +4,7 @@ import { Client } from 'eris';
 export function ready(client: Client) {
     client.on('ready', () => {
         client.editStatus('idle', {
-            name: 'Arif is still developing me! ❤️',
+            name: 'Creating by Satify.cf!!❤️',
             type: 0,
         });
         console.log(

@@ -8,7 +8,7 @@ import handler from './handlers/index';
 console.clear();
 console.log(
     chalk.hex('#FFCF80')(
-        figlet.textSync('Bakery.', { horizontalLayout: 'full' })
+        figlet.textSync('System.', { horizontalLayout: 'full' })
     )
 );
 import './api/api';
