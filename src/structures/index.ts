@@ -1,2 +1,4 @@
 import * as config from '../config.json';
-export { config };
+import {ButtonPagination} from './paginations/buttons';
+
+export { config, ButtonPagination };

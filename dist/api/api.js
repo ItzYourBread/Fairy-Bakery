@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var express_1 = tslib_1.__importDefault(require("express"));
-var chalk_1 = tslib_1.__importDefault(require("chalk"));
+var express_1 = (0, tslib_1.__importDefault)(require("express"));
+var chalk_1 = (0, tslib_1.__importDefault)(require("chalk"));
 require("dotenv/config");
 var app = (0, express_1.default)();
 app.get('/', function (req, res) {

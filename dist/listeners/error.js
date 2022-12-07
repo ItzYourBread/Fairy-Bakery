@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.error = void 0;
 var tslib_1 = require("tslib");
-var chalk_1 = tslib_1.__importDefault(require("chalk"));
+var chalk_1 = (0, tslib_1.__importDefault)(require("chalk"));
 function error(client) {
     client.on('error', function (err) {
         console.error(error);

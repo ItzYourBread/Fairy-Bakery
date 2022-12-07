@@ -7,7 +7,7 @@
     "scripts": {
         "start": "node dist/bakery",
         "build": "tsc",
-        "dev": "tsc && nodemon dist/bakery",
+        "dev": "nodemon dist/bakery",
         "format": "prettier --write \"./**/*.ts\" \"./**/*.json\""
     },
     "keywords": [],

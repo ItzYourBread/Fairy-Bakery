@@ -17,9 +17,9 @@ exports.default = {
             },
         ],
     },
-    run: function (client, interaction) { return tslib_1.__awaiter(void 0, void 0, void 0, function () {
+    run: function (client, interaction) { return (0, tslib_1.__awaiter)(void 0, void 0, void 0, function () {
         var user_id, user, Data, main, cooldown, menus, timer, collector;
-        return tslib_1.__generator(this, function (_a) {
+        return (0, tslib_1.__generator)(this, function (_a) {
             switch (_a.label) {
                 case 0:
                     user_id = interaction.data.options && interaction.data.options[0]
@@ -32,13 +32,13 @@ exports.default = {
                 case 2:
                     Data = (_a.sent()) || new profile_1.User({ id: user_id });
                     main = {
-                        title: "".concat(user.username, "'s Profile"),
+                        title: user.username + "'s Profile",
                         color: Number(index_1.config.colour.embed),
                         description: "Bio: New Bakery User 2022!",
                         timestamp: new Date(),
                     };
                     cooldown = {
-                        title: "".concat(user.username, "'s Cooldown"),
+                        title: user.username + "'s Cooldown",
                         color: Number(index_1.config.colour.embed),
                         description: "None",
                         timestamp: new Date(),
@@ -73,8 +73,8 @@ exports.default = {
                 case 3:
                     _a.sent();
                     timer = null;
-                    collector = function (caller) { return tslib_1.__awaiter(void 0, void 0, void 0, function () {
-                        return tslib_1.__generator(this, function (_a) {
+                    collector = function (caller) { return (0, tslib_1.__awaiter)(void 0, void 0, void 0, function () {
+                        return (0, tslib_1.__generator)(this, function (_a) {
                             switch (_a.label) {
                                 case 0:
                                     if (caller.member.id !== interaction.member.id) {
@@ -104,8 +104,8 @@ exports.default = {
                         });
                     }); };
                     client.on('interaction', collector);
-                    timer = setTimeout(function () { return tslib_1.__awaiter(void 0, void 0, void 0, function () {
-                        return tslib_1.__generator(this, function (_a) {
+                    timer = setTimeout(function () { return (0, tslib_1.__awaiter)(void 0, void 0, void 0, function () {
+                        return (0, tslib_1.__generator)(this, function (_a) {
                             switch (_a.label) {
                                 case 0:
                                     client.off('interaction', collector);

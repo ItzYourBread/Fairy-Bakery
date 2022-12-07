@@ -8,14 +8,14 @@ exports.default = {
         description: 'Ping pong',
         type: eris_1.Constants.ApplicationCommandTypes.CHAT_INPUT,
     },
-    run: function (client, interaction) { return tslib_1.__awaiter(void 0, void 0, void 0, function () {
+    run: function (client, interaction) { return (0, tslib_1.__awaiter)(void 0, void 0, void 0, function () {
         var ping;
-        return tslib_1.__generator(this, function (_a) {
+        return (0, tslib_1.__generator)(this, function (_a) {
             switch (_a.label) {
                 case 0:
                     ping = Date.now() - interaction.createdAt;
                     return [4, interaction.createMessage({
-                            content: "Pong! `".concat(ping, "ms` "),
+                            content: "Pong! `" + ping + "ms` ",
                         })];
                 case 1:
                     _a.sent();

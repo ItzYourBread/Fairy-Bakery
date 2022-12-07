@@ -4,12 +4,12 @@ exports.interactionCreate = void 0;
 var tslib_1 = require("tslib");
 var eris_1 = require("eris");
 var commands_1 = require("../handlers/commands");
-var chalk_1 = tslib_1.__importDefault(require("chalk"));
+var chalk_1 = (0, tslib_1.__importDefault)(require("chalk"));
 function interactionCreate(client) {
     var _this = this;
-    client.on('interactionCreate', function (interaction) { return tslib_1.__awaiter(_this, void 0, void 0, function () {
+    client.on('interactionCreate', function (interaction) { return (0, tslib_1.__awaiter)(_this, void 0, void 0, function () {
         var _i, commands_2, slashCommand;
-        return tslib_1.__generator(this, function (_a) {
+        return (0, tslib_1.__generator)(this, function (_a) {
             switch (_a.label) {
                 case 0:
                     if (!(interaction instanceof eris_1.CommandInteraction)) return [3, 4];

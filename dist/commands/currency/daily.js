@@ -8,9 +8,9 @@ exports.default = {
         name: 'daily',
         description: 'Get your daily reward!',
     },
-    run: function (client, interaction) { return tslib_1.__awaiter(void 0, void 0, void 0, function () {
+    run: function (client, interaction) { return (0, tslib_1.__awaiter)(void 0, void 0, void 0, function () {
         var user, Data, cash, streak, bonus, dailyReset, reward;
-        return tslib_1.__generator(this, function (_a) {
+        return (0, tslib_1.__generator)(this, function (_a) {
             switch (_a.label) {
                 case 0:
                     user = interaction.member;
@@ -22,7 +22,7 @@ exports.default = {
                                 embeds: [
                                     {
                                         color: Number(index_1.config.colour.danger),
-                                        description: "You already claimed your daily reward today!\nYour next daily <t:".concat(Math.floor(Data.daily.time / 1000) + 3600, ":R>"),
+                                        description: "You already claimed your daily reward today!\nYour next daily <t:" + (Math.floor(Data.daily.time / 1000) + 3600) + ":R>",
                                     },
                                 ],
                                 flags: 64,
@@ -45,18 +45,18 @@ exports.default = {
                     Data.daily.time = dailyReset.setUTCHours(23, 59, 59, 999);
                     Data.save();
                     reward = {
-                        title: "".concat(user.username, "'s Daily"),
+                        title: user.username + "'s Daily",
                         color: Number(index_1.config.colour.embed),
-                        description: "You received ".concat(index_1.config.emoji.cash, "`").concat(cash, "` and added to your profile!"),
+                        description: "You received " + index_1.config.emoji.cash + "`" + cash + "` and added to your profile!",
                         fields: [
                             {
                                 name: 'Streak',
-                                value: "".concat(Data.daily.streak),
+                                value: "" + Data.daily.streak,
                                 inline: true,
                             },
                             {
                                 name: 'Next Daily',
-                                value: "<t:".concat(Math.floor(Data.daily.time / 1000) + 3600, ":R>"),
+                                value: "<t:" + (Math.floor(Data.daily.time / 1000) + 3600) + ":R>",
                                 inline: true,
                             },
                         ],

@@ -19,9 +19,9 @@ exports.default = {
             },
         ],
     },
-    run: function (client, interaction) { return tslib_1.__awaiter(void 0, void 0, void 0, function () {
+    run: function (client, interaction) { return (0, tslib_1.__awaiter)(void 0, void 0, void 0, function () {
         var user_id, user, Data, Bakeries, Resources, msg, inventory;
-        return tslib_1.__generator(this, function (_a) {
+        return (0, tslib_1.__generator)(this, function (_a) {
             switch (_a.label) {
                 case 0:
                     user_id = interaction.data.options && interaction.data.options[0]
@@ -37,19 +37,19 @@ exports.default = {
                     Resources = '';
                     inventory_json_1.bakeries.map(function (e) {
                         if (Data.bakeries[e.value] && Data.bakeries[e.value] >= 1) {
-                            Bakeries += "".concat(index_1.config.emoji[e.emoji]).concat((0, stubby_ts_1.SmallNumber)(Data.bakeries[e.value], Data.bakeries[e.value].toString().length + 1), "  ");
+                            Bakeries += "" + index_1.config.emoji[e.emoji] + (0, stubby_ts_1.SmallNumber)(Data.bakeries[e.value], Data.bakeries[e.value].toString().length + 1) + "  ";
                         }
                     });
                     inventory_json_1.resources.map(function (e) {
                         if (Data.resources[e.value] && Data.resources[e.value] >= 1) {
-                            Resources += "".concat(index_1.config.emoji[e.emoji]).concat((0, stubby_ts_1.SmallNumber)(Data.resources[e.value], Data.resources[e.value].toString().length + 1), "  ");
+                            Resources += "" + index_1.config.emoji[e.emoji] + (0, stubby_ts_1.SmallNumber)(Data.resources[e.value], Data.resources[e.value].toString().length + 1) + "  ";
                         }
                     });
                     if (!Bakeries && !Resources) {
                         msg = 'ᴇᴍᴘᴛʏ';
                     }
                     inventory = {
-                        title: "".concat(user.username, "'s Inventory"),
+                        title: user.username + "'s Inventory",
                         color: Number(index_1.config.colour.embed),
                         description: msg,
                         fields: [],
