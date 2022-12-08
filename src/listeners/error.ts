@@ -3,7 +3,7 @@ import { Client } from 'eris';
 
 export function error(client: Client) {
     client.on('error', (err) => {
-        console.error(error);
+        console.error(err);
     });
     console.log(chalk.cyanBright('[Event] error is loaded'));
 }

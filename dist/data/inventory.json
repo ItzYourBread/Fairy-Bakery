@@ -3,26 +3,31 @@
     "stocks": [
         {
             "name": "Milk",
+            "price": "30",
             "emoji": "milk",
             "value": "milks"
         },
         {
             "name": "Egg",
+            "price": "30",
             "emoji": "egg",
             "value": "eggs"
         },
         {
             "name": "Sugar",
+            "price": "50",
             "emoji": "sugar",
             "value": "sugars"
         },
         {
             "name": "Chocolate",
+            "price": "60",
             "emoji": "chocolate",
             "value": "chocolates"
         },
         {
             "name": "Cream",
+            "price": "60",
             "emoji": "cream",
             "value": "creams"
         }

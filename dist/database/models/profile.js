@@ -18,7 +18,7 @@ var Profile = new mongoose_1.Schema({
         eggs: { type: Number, default: 0 },
         sugars: { type: Number, default: 0 },
         chocolates: { type: Number, default: 0 },
-        creams: { type: Number, default: 0 }
+        creams: { type: Number, default: 0 },
     },
 });
 var User = mongoose_1.default.model('Profile', Profile);

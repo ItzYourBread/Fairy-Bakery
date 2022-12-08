@@ -13,10 +13,10 @@ export interface IUser extends Document {
     };
     stocks: {
         milks: number;
-		eggs: number,
-		sugars: number,
-		chocolates: number,
-		creams: number,
+        eggs: number;
+        sugars: number;
+        chocolates: number;
+        creams: number;
     };
 }
 
@@ -33,10 +33,10 @@ const Profile: Schema = new Schema({
     },
     stocks: {
         milks: { type: Number, default: 0 },
-		eggs: { type: Number, default: 0 },
-		sugars: { type: Number, default: 0},
-		chocolates: { type: Number, default: 0},
-		creams: { type: Number, default: 0}
+        eggs: { type: Number, default: 0 },
+        sugars: { type: Number, default: 0 },
+        chocolates: { type: Number, default: 0 },
+        creams: { type: Number, default: 0 },
     },
 });
 

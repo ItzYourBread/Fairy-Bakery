@@ -17,12 +17,12 @@ exports.default = {
                         color: Number(index_1.config.colour.embed),
                         fields: [
                             {
-                                name: 'Social',
-                                value: 'soon',
+                                name: 'Reward',
+                                value: '`daily`',
                                 inline: false,
                             },
                             {
-                                name: 'Currency',
+                                name: 'Statistic',
                                 value: '`balance`, `inventory`',
                                 inline: false,
                             },
