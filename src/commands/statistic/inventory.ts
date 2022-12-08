@@ -2,7 +2,7 @@ import { Constants, Client, CommandInteraction } from 'eris';
 import { SmallNumber } from 'stubby.ts';
 import { User } from '../../database/models/profile';
 import { config } from '../../structures/index';
-import { bakeries, stocks } from '../../data/inventory.json';
+import fetch from "node-fetch"
 
 export default {
     data: {
@@ -26,9 +26,11 @@ export default {
         const Data =
             (await User.findOne({ id: user_id })) || new User({ id: user_id });
 
+		let RestApi = await fetch(`${config.service.api}/json/inventory`).then(r => r.json());
+		
         let Bakeries = '';
         let Stocks = '';
-        bakeries.map((e) => {
+        RestApi.bakeries.map((e) => {
             if (Data.bakeries[e.value] && Data.bakeries[e.value] >= 1) {
                 Bakeries += `${config.emoji[e.emoji]}${SmallNumber(
                     Data.bakeries[e.value],
@@ -36,7 +38,7 @@ export default {
                 )} \ `;
             }
         });
-        stocks.map((e) => {
+        RestApi.stocks.map((e) => {
             if (Data.stocks[e.value] && Data.stocks[e.value] >= 1) {
                 Stocks += `${config.emoji[e.emoji]}${SmallNumber(
                     Data.stocks[e.value],

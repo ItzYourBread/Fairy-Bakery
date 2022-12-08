@@ -2,6 +2,9 @@
     "bot": {
         "name": "Bakery"
     },
+    "service": {
+        "api": "https://103.60.13.252:20239"
+    },
     "colour": {
         "embed": "0xFFCF80",
         "danger": "0xFF3434"
