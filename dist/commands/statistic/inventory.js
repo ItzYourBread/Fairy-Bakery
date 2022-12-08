@@ -20,7 +20,7 @@ exports.default = {
         ],
     },
     run: function (client, interaction) { return (0, tslib_1.__awaiter)(void 0, void 0, void 0, function () {
-        var user_id, user, Data, RestApi, Bakeries, Stocks, msg, inventory;
+        var user_id, user, Data, RestApi, Stocks, inventory;
         return (0, tslib_1.__generator)(this, function (_a) {
             switch (_a.label) {
                 case 0:
@@ -36,46 +36,24 @@ exports.default = {
                     return [4, (0, node_fetch_1.default)(index_1.config.service.api + "/json/inventory").then(function (r) { return r.json(); })];
                 case 3:
                     RestApi = _a.sent();
-                    Bakeries = '';
                     Stocks = '';
-                    RestApi.bakeries.map(function (e) {
-                        if (Data.bakeries[e.value] && Data.bakeries[e.value] >= 1) {
-                            Bakeries += "" + index_1.config.emoji[e.emoji] + (0, stubby_ts_1.SmallNumber)(Data.bakeries[e.value], Data.bakeries[e.value].toString().length + 1) + "  ";
-                        }
-                    });
                     RestApi.stocks.map(function (e) {
                         if (Data.stocks[e.value] && Data.stocks[e.value] >= 1) {
                             Stocks += "" + index_1.config.emoji[e.emoji] + (0, stubby_ts_1.SmallNumber)(Data.stocks[e.value], Data.stocks[e.value].toString().length + 1) + "  ";
                         }
                     });
-                    if (!Bakeries && !Stocks) {
-                        msg = 'ᴇᴍᴘᴛʏ';
+                    if (!Stocks) {
+                        Stocks = 'ᴇᴍᴘᴛʏ';
                     }
                     inventory = {
                         title: user.username + "'s Inventory",
                         color: Number(index_1.config.colour.embed),
-                        description: msg,
-                        fields: [],
+                        description: Stocks,
                         timestamp: new Date(),
                     };
-                    if (Bakeries) {
-                        inventory.fields.push({
-                            name: 'Bakeries',
-                            value: Bakeries,
-                            inline: true,
-                        });
-                    }
-                    if (Stocks) {
-                        inventory.fields.push({
-                            name: 'Stocks',
-                            value: Stocks,
-                            inline: true,
-                        });
-                    }
                     return [4, interaction.createMessage({ embeds: [inventory] })];
                 case 4:
                     _a.sent();
-                    Bakeries = '';
                     Stocks = '';
                     return [2];
             }

@@ -3,9 +3,9 @@
         "name": "Bakery"
     },
 
-	"service": {
-		"api": "http://103.60.13.252:20239"
-	},
+    "service": {
+        "api": "http://103.60.13.252:20239"
+    },
 
     "colour": {
         "embed": "0xFFCF80",
@@ -19,6 +19,6 @@
         "sugar": "<:sugar:1050154680635887667>",
         "chocolate": "<:chocolate:1050154725196185672>",
         "cream": "<:cream:1050154802753064980>",
-		"miniBread": "<:mini_bread:1050473822563864636>"
+        "miniBread": "<:mini_bread:1050473822563864636>"
     }
 }

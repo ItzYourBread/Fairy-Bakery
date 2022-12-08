@@ -30,16 +30,7 @@ export default {
             (r) => r.json()
         );
 
-        let Bakeries = '';
         let Stocks = '';
-        RestApi.bakeries.map((e) => {
-            if (Data.bakeries[e.value] && Data.bakeries[e.value] >= 1) {
-                Bakeries += `${config.emoji[e.emoji]}${SmallNumber(
-                    Data.bakeries[e.value],
-                    Data.bakeries[e.value].toString().length + 1
-                )} \ `;
-            }
-        });
         RestApi.stocks.map((e) => {
             if (Data.stocks[e.value] && Data.stocks[e.value] >= 1) {
                 Stocks += `${config.emoji[e.emoji]}${SmallNumber(
@@ -49,34 +40,18 @@ export default {
             }
         });
 
-        if (!Bakeries && !Stocks) {
-            var msg = 'ᴇᴍᴘᴛʏ';
+        if (!Stocks) {
+            Stocks = 'ᴇᴍᴘᴛʏ';
         }
 
         let inventory = {
             title: `${user.username}'s Inventory`,
             color: Number(config.colour.embed),
-            description: msg,
-            fields: [],
+            description: Stocks,
             timestamp: new Date(),
         };
-        if (Bakeries) {
-            inventory.fields.push({
-                name: 'Bakeries',
-                value: Bakeries,
-                inline: true,
-            });
-        }
-        if (Stocks) {
-            inventory.fields.push({
-                name: 'Stocks',
-                value: Stocks,
-                inline: true,
-            });
-        }
 
         await interaction.createMessage({ embeds: [inventory] });
-        Bakeries = '';
         Stocks = '';
     },
 };
