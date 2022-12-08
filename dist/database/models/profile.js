@@ -11,7 +11,7 @@ var Profile = new mongoose_1.Schema({
         streak: { type: Number, default: 0 },
     },
     bakeries: {
-        biscuits: { type: Number, default: 0 },
+        miniBreads: { type: Number, default: 0 },
     },
     stocks: {
         milks: { type: Number, default: 0 },

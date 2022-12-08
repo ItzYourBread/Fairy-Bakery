@@ -7,7 +7,7 @@ export interface IUser extends Document {
         streak: number;
     };
     bakeries: {
-        biscuits: number;
+        miniBreads: number;
     };
     stocks: {
         milks: number;

@@ -1,5 +1,12 @@
 {
-    "bakeries": [],
+    "bakeries": [
+        {
+            "name": "Mini Bread",
+            "price": "50",
+            "emoji": "miniBread",
+            "value": "miniBreads"
+        }
+    ],
     "stocks": [
         {
             "name": "Milk",

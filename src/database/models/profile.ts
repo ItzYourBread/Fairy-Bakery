@@ -9,7 +9,7 @@ export interface IUser extends Document {
         streak: number;
     };
     bakeries: {
-        biscuits: number;
+        miniBreads: number;
     };
     stocks: {
         milks: number;
@@ -29,7 +29,7 @@ const Profile: Schema = new Schema({
         streak: { type: Number, default: 0 },
     },
     bakeries: {
-        biscuits: { type: Number, default: 0 },
+        miniBreads: { type: Number, default: 0 },
     },
     stocks: {
         milks: { type: Number, default: 0 },

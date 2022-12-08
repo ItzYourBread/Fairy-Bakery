@@ -2,7 +2,7 @@ import { Constants, Client, CommandInteraction } from 'eris';
 import { SmallNumber } from 'stubby.ts';
 import { User } from '../../database/models/profile';
 import { config } from '../../structures/index';
-import fetch from "node-fetch"
+import fetch from 'node-fetch';
 
 export default {
     data: {
@@ -26,8 +26,10 @@ export default {
         const Data =
             (await User.findOne({ id: user_id })) || new User({ id: user_id });
 
-		let RestApi = await fetch(`${config.service.api}/json/inventory`).then(r => r.json());
-		
+        let RestApi = await fetch(`${config.service.api}/json/inventory`).then(
+            (r) => r.json()
+        );
+
         let Bakeries = '';
         let Stocks = '';
         RestApi.bakeries.map((e) => {
