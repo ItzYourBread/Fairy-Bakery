@@ -3,9 +3,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.ButtonPagination = void 0;
 var tslib_1 = require("tslib");
 var eris_1 = require("eris");
-function ButtonPagination(client, interaction, embeds) {
+function ButtonPagination(client, interaction, embeds, timeout) {
     return (0, tslib_1.__awaiter)(this, void 0, void 0, function () {
-        var allbuttons, currentPage, timer, collector;
+        var allbuttons, currentPage, collector;
         var _this = this;
         return (0, tslib_1.__generator)(this, function (_a) {
             switch (_a.label) {
@@ -72,7 +72,6 @@ function ButtonPagination(client, interaction, embeds) {
                     _a.label = 4;
                 case 4:
                     currentPage = 0;
-                    timer = null;
                     collector = function (b) { return (0, tslib_1.__awaiter)(_this, void 0, void 0, function () {
                         var _a;
                         return (0, tslib_1.__generator)(this, function (_b) {
@@ -160,28 +159,27 @@ function ButtonPagination(client, interaction, embeds) {
                                 case 16:
                                     _b.sent();
                                     return [3, 17];
-                                case 17:
-                                    clearTimeout(timer);
-                                    return [2];
+                                case 17: return [2];
                             }
                         });
                     }); };
                     client.on('interactionCreate', collector);
-                    timer = setTimeout(function () { return (0, tslib_1.__awaiter)(_this, void 0, void 0, function () {
+                    setTimeout(function () { return (0, tslib_1.__awaiter)(_this, void 0, void 0, function () {
                         return (0, tslib_1.__generator)(this, function (_a) {
                             switch (_a.label) {
                                 case 0:
-                                    client.off('interactionCreate', collector);
-                                    return [4, interaction.editOriginalMessage({
-                                            components: [],
-                                        })];
+                                    allbuttons.components.map(function (d) {
+                                        d.disabled = true;
+                                    });
+                                    return [4, interaction.editOriginalMessage({ components: [allbuttons] })];
                                 case 1:
                                     _a.sent();
+                                    client.off('interactionCreate', collector);
                                     console.log('Collector ended!');
                                     return [2];
                             }
                         });
-                    }); }, 106000);
+                    }); }, timeout);
                     return [2];
             }
         });

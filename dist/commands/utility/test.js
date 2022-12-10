@@ -17,7 +17,7 @@ exports.default = {
             page5 = { title: 'Doing' };
             page6 = { title: 'Today!' };
             embeds = [page1, page2, page3, page4, page5, page6];
-            (0, index_1.ButtonPagination)(client, interaction, embeds);
+            (0, index_1.ButtonPagination)(client, interaction, embeds, 10000);
             return [2];
         });
     }); },

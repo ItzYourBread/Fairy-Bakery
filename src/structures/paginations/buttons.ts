@@ -13,7 +13,8 @@ import {
 export async function ButtonPagination(
     client: Client,
     interaction: CommandInteraction,
-    embeds: any
+    embeds: any,
+	timeout: number
 ) {
     let allbuttons = {
         type: Constants.ComponentTypes.ACTION_ROW,
@@ -80,7 +81,6 @@ export async function ButtonPagination(
     }
 
     let currentPage = 0;
-    let timer = null;
     const collector = async (b: ComponentInteraction) => {
         await b.deferUpdate();
         switch (b.data.custom_id) {
@@ -151,14 +151,14 @@ export async function ButtonPagination(
                 }
                 break;
         }
-        clearTimeout(timer);
     };
     client.on('interactionCreate', collector);
-    timer = setTimeout(async () => {
+    setTimeout(async () => {
+        allbuttons.components.map((d) => {
+			d.disabled = true
+		})
+		await interaction.editOriginalMessage({ components: [allbuttons]})
         client.off('interactionCreate', collector);
-        await interaction.editOriginalMessage({
-            components: [],
-        });
         console.log('Collector ended!');
-    }, 106000);
+    }, timeout);
 }
