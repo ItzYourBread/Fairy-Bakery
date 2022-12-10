@@ -1,5 +1,5 @@
 import { Constants, Client, CommandInteraction } from 'eris';
-import { config } from '../../structures/index';
+import { config, ButtonPagination } from '../../structures/index';
 
 export default {
     data: {
@@ -7,36 +7,66 @@ export default {
         description: 'Bakery help!',
     },
     run: async (client: Client, interaction: CommandInteraction) => {
-        let commands = {
-            title: 'Help and Commands!',
-            color: Number(config.colour.embed),
-            fields: [
-                {
-                    name: 'Reward',
-                    value: '`daily`',
-                    inline: false,
-                },
-                {
-                    name: 'Statistic',
-                    value: '`balance`, `inventory`',
-                    inline: false,
-                },
-                {
-                    name: 'Misc',
-                    value: '`ping`',
-                    inline: false,
-                },
-                {
-                    name: 'Utility',
-                    value: '`help`',
-                    inline: false,
-                },
-            ],
-            footer: {
-                text: 'Powered by Creative.co',
-            },
-            timestamp: new Date(),
-        };
-        await interaction.createMessage({ embeds: [commands] });
+        let pages = [
+			{
+				title: "Help & Commands",
+				color: Number(config.colour.embed),
+				fields: [
+					{
+						name: "</balance:0>",
+						value: "Your balance",
+						inline: false
+					},
+					{
+						name: "</inventory:0>",
+						value: "Your inventory to store stocks",
+						inline: false
+					},
+					{
+						name: "</storage:0>",
+						value: "Your storage to store hot breads",
+						inline: false
+					},
+					{
+						name: "</storage upgrade:0>",
+						value: "Upgrade your storage to store more breads",
+						inline: false
+					},
+					{
+						name: "</daily:0>",
+						value: "Get your daily reward",
+						inline: false
+					}
+				],
+				footer: {
+					text: "Pages 1/2"
+				}
+			},
+			{
+				title: "Help & Commands",
+				color: Number(config.colour.embed),
+				fields: [
+					{
+						name: "</profile:0>",
+						value: "View profile",
+						inline: false
+					},
+					{
+						name: "</ping:0>",
+						value: "Ping pong",
+						inline: false
+					},
+					{
+						name: "</help:0>",
+						value: "Get help from FairyBakery",
+						inline: false
+					},
+				],
+				footer: {
+					text: "Pages 2/2"
+				}
+			}
+		];
+		ButtonPagination(client, interaction, pages)
     },
 };

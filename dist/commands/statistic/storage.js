@@ -58,8 +58,10 @@ exports.default = {
                     Bakeries_1 = '';
                     return [3, 5];
                 case 4:
-                    if (interaction.data.options[0].name === "upgrade") {
-                        return [2, interaction.createMessage({ content: "This command is under development!" })];
+                    if (interaction.data.options[0].name === 'upgrade') {
+                        return [2, interaction.createMessage({
+                                content: 'This command is under development!',
+                            })];
                     }
                     _a.label = 5;
                 case 5: return [2];

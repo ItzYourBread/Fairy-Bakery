@@ -29,21 +29,21 @@ export async function ButtonPagination(
                 label: '<',
                 type: Constants.ComponentTypes.BUTTON,
                 style: Constants.ButtonStyles.PRIMARY,
-                custom_id: '2',
+                custom_id: '1',
                 disabled: false,
             },
             {
                 label: '>',
                 type: Constants.ComponentTypes.BUTTON,
                 style: Constants.ButtonStyles.PRIMARY,
-                custom_id: '3',
+                custom_id: '2',
                 disabled: false,
             },
             {
                 label: '>>',
                 type: Constants.ComponentTypes.BUTTON,
                 style: Constants.ButtonStyles.PRIMARY,
-                custom_id: '4',
+                custom_id: '3',
                 disabled: false,
             },
         ],
@@ -61,20 +61,19 @@ export async function ButtonPagination(
         }
     }
 
-    embeds = embeds.map((embed, index) => {
-        return embed.footer({
-            text: `Page: ${index + 1}/${embeds.length}`,
+    /* embeds = embeds.map((embed, index) => {
+        return embed.footer.push({
+            text: `Pages: ${index + 1}/${embeds.length}`,
         });
-    });
+    }); */
 
-    let sendMsg;
     if (interaction.acknowledged) {
-        sendMsg = await interaction.editOriginalMessage({
+        await interaction.editOriginalMessage({
             embeds: [embeds[0]],
             components: [allbuttons],
         });
     } else {
-        sendMsg = await interaction.createMessage({
+        await interaction.createMessage({
             embeds: [embeds[0]],
             components: [allbuttons],
         });
@@ -83,14 +82,13 @@ export async function ButtonPagination(
     let currentPage = 0;
     let timer = null;
     const collector = async (b: ComponentInteraction) => {
-        await b.deferUpdate().catch((e) => null);
-        // page first
+        await b.deferUpdate();
         switch (b.data.custom_id) {
             case '0':
                 {
                     if (currentPage != 0) {
                         currentPage = 0;
-                        await sendMsg
+                        await b
                             .editOriginalMessage({
                                 embeds: [embeds[currentPage]],
                                 components: [allbuttons],
@@ -103,7 +101,7 @@ export async function ButtonPagination(
                 {
                     if (currentPage != 0) {
                         currentPage -= 1;
-                        await sendMsg
+                        await b
                             .editOriginalMessage({
                                 embeds: [embeds[currentPage]],
                                 components: [allbuttons],
@@ -111,7 +109,7 @@ export async function ButtonPagination(
                             .catch((e) => null);
                     } else {
                         currentPage = embeds.length - 1;
-                        await sendMsg
+                        await b
                             .editOriginalMessage({
                                 embeds: [embeds[currentPage]],
                                 components: [allbuttons],
@@ -122,20 +120,9 @@ export async function ButtonPagination(
                 break;
             case '2':
                 {
-                    allbuttons.components.forEach((btn) => btn.disabled(true));
-                    await sendMsg
-                        .editOriginalMessage({
-                            embeds: [embeds[currentPage]],
-                            components: [allbuttons],
-                        })
-                        .catch((e) => null);
-                }
-                break;
-            case '3':
-                {
                     if (currentPage < embeds.length - 1) {
                         currentPage++;
-                        await sendMsg
+                        await b
                             .editOriginalMessage({
                                 embeds: [embeds[currentPage]],
                                 components: [allbuttons],
@@ -143,7 +130,7 @@ export async function ButtonPagination(
                             .catch((e) => null);
                     } else {
                         currentPage = 0;
-                        await sendMsg
+                        await b
                             .editOriginalMessage({
                                 embeds: [embeds[currentPage]],
                                 components: [allbuttons],
@@ -152,10 +139,10 @@ export async function ButtonPagination(
                     }
                 }
                 break;
-            case '4':
+            case '3':
                 {
                     currentPage = embeds.length - 1;
-                    await sendMsg
+                    await b
                         .editOriginalMessage({
                             embeds: [embeds[currentPage]],
                             components: [allbuttons],
@@ -163,19 +150,15 @@ export async function ButtonPagination(
                         .catch((e) => null);
                 }
                 break;
-
-            default:
-                break;
         }
         clearTimeout(timer);
-        client.off('interaction', collector);
     };
-    client.on('interaction', collector);
+    client.on('interactionCreate', collector);
     timer = setTimeout(async () => {
-        client.off('interaction', collector);
+        client.off('interactionCreate', collector);
         await interaction.editOriginalMessage({
             components: [],
         });
         console.log('Collector ended!');
-    }, 15000);
+    }, 106000);
 }

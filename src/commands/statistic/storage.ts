@@ -55,8 +55,10 @@ export default {
 
             await interaction.createMessage({ embeds: [storage] });
             Bakeries = '';
-        } else if (interaction.data.options[0].name === "upgrade") {
-			return interaction.createMessage({ content: "This command is under development!"})
-		}
+        } else if (interaction.data.options[0].name === 'upgrade') {
+            return interaction.createMessage({
+                content: 'This command is under development!',
+            });
+        }
     },
 };

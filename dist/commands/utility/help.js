@@ -8,45 +8,70 @@ exports.default = {
         description: 'Bakery help!',
     },
     run: function (client, interaction) { return (0, tslib_1.__awaiter)(void 0, void 0, void 0, function () {
-        var commands;
+        var pages;
         return (0, tslib_1.__generator)(this, function (_a) {
-            switch (_a.label) {
-                case 0:
-                    commands = {
-                        title: 'Help and Commands!',
-                        color: Number(index_1.config.colour.embed),
-                        fields: [
-                            {
-                                name: 'Reward',
-                                value: '`daily`',
-                                inline: false,
-                            },
-                            {
-                                name: 'Statistic',
-                                value: '`balance`, `inventory`',
-                                inline: false,
-                            },
-                            {
-                                name: 'Misc',
-                                value: '`ping`',
-                                inline: false,
-                            },
-                            {
-                                name: 'Utility',
-                                value: '`help`',
-                                inline: false,
-                            },
-                        ],
-                        footer: {
-                            text: 'Powered by Creative.co',
+            pages = [
+                {
+                    title: "Help & Commands",
+                    color: Number(index_1.config.colour.embed),
+                    fields: [
+                        {
+                            name: "</balance:0>",
+                            value: "Your balance",
+                            inline: false
                         },
-                        timestamp: new Date(),
-                    };
-                    return [4, interaction.createMessage({ embeds: [commands] })];
-                case 1:
-                    _a.sent();
-                    return [2];
-            }
+                        {
+                            name: "</inventory:0>",
+                            value: "Your inventory to store stocks",
+                            inline: false
+                        },
+                        {
+                            name: "</storage:0>",
+                            value: "Your storage to store hot breads",
+                            inline: false
+                        },
+                        {
+                            name: "</storage upgrade:0>",
+                            value: "Upgrade your storage to store more breads",
+                            inline: false
+                        },
+                        {
+                            name: "</daily:0>",
+                            value: "Get your daily reward",
+                            inline: false
+                        }
+                    ],
+                    footer: {
+                        text: "Pages 1/2"
+                    }
+                },
+                {
+                    title: "Help & Commands",
+                    color: Number(index_1.config.colour.embed),
+                    fields: [
+                        {
+                            name: "</profile:0>",
+                            value: "View profile",
+                            inline: false
+                        },
+                        {
+                            name: "</ping:0>",
+                            value: "Ping pong",
+                            inline: false
+                        },
+                        {
+                            name: "</help:0>",
+                            value: "Get help from FairyBakery",
+                            inline: false
+                        },
+                    ],
+                    footer: {
+                        text: "Pages 2/2"
+                    }
+                }
+            ];
+            (0, index_1.ButtonPagination)(client, interaction, pages);
+            return [2];
         });
     }); },
 };
