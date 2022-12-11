@@ -38,9 +38,7 @@ export default {
                         inline: false,
                     },
                 ],
-                footer: {
-                    text: 'Pages 1/2',
-                },
+                footer: {}
             },
             {
                 title: 'Help & Commands',
@@ -62,11 +60,14 @@ export default {
                         inline: false,
                     },
                 ],
-                footer: {
-                    text: 'Pages 2/2',
-                },
+                footer: {}
             },
         ];
+		
+        pages.map((embed, index) => {
+            embed.footer = {text: `Pages: ${index + 1}/${pages.length}`}
+        }); 
+
         ButtonPagination(client, interaction, pages, 35000);
     },
 };

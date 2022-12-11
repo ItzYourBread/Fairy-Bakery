@@ -159,7 +159,9 @@ function ButtonPagination(client, interaction, embeds, timeout) {
                                 case 16:
                                     _b.sent();
                                     return [3, 17];
-                                case 17: return [2];
+                                case 17:
+                                    timeout += 9000;
+                                    return [2];
                             }
                         });
                     }); };

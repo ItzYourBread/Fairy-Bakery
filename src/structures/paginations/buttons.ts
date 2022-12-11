@@ -14,7 +14,7 @@ export async function ButtonPagination(
     client: Client,
     interaction: CommandInteraction,
     embeds: any,
-	timeout: number
+    timeout: number
 ) {
     let allbuttons = {
         type: Constants.ComponentTypes.ACTION_ROW,
@@ -61,12 +61,6 @@ export async function ButtonPagination(
             });
         }
     }
-
-    /* embeds = embeds.map((embed, index) => {
-        return embed.footer.push({
-            text: `Pages: ${index + 1}/${embeds.length}`,
-        });
-    }); */
 
     if (interaction.acknowledged) {
         await interaction.editOriginalMessage({
@@ -151,13 +145,14 @@ export async function ButtonPagination(
                 }
                 break;
         }
+        timeout += 9000;
     };
     client.on('interactionCreate', collector);
     setTimeout(async () => {
         allbuttons.components.map((d) => {
-			d.disabled = true
-		})
-		await interaction.editOriginalMessage({ components: [allbuttons]})
+            d.disabled = true;
+        });
+        await interaction.editOriginalMessage({ components: [allbuttons] });
         client.off('interactionCreate', collector);
         console.log('Collector ended!');
     }, timeout);

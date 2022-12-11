@@ -41,9 +41,7 @@ exports.default = {
                             inline: false,
                         },
                     ],
-                    footer: {
-                        text: 'Pages 1/2',
-                    },
+                    footer: {}
                 },
                 {
                     title: 'Help & Commands',
@@ -65,11 +63,12 @@ exports.default = {
                             inline: false,
                         },
                     ],
-                    footer: {
-                        text: 'Pages 2/2',
-                    },
+                    footer: {}
                 },
             ];
+            pages.map(function (embed, index) {
+                embed.footer = { text: "Pages: " + (index + 1) + "/" + pages.length };
+            });
             (0, index_1.ButtonPagination)(client, interaction, pages, 35000);
             return [2];
         });
