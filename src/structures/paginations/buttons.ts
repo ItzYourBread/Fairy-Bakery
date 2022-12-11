@@ -76,6 +76,12 @@ export async function ButtonPagination(
 
     let currentPage = 0;
     const collector = async (b: ComponentInteraction) => {
+        if (b.member.id != interaction.member.id) {
+            return b.createMessage({
+                content: "It's not for you!",
+                flags: 64,
+            });
+        }
         await b.deferUpdate();
         switch (b.data.custom_id) {
             case '0':
@@ -145,15 +151,14 @@ export async function ButtonPagination(
                 }
                 break;
         }
-        timeout += 9000;
+        timeout += 5000;
     };
-    client.on('interactionCreate', collector);
+    client.on('interaction', collector);
     setTimeout(async () => {
         allbuttons.components.map((d) => {
             d.disabled = true;
         });
         await interaction.editOriginalMessage({ components: [allbuttons] });
-        client.off('interactionCreate', collector);
-        console.log('Collector ended!');
+        client.off('interaction', collector);
     }, timeout);
 }

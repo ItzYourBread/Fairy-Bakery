@@ -18,8 +18,8 @@ export default {
         let embeds = [page1, page2, page3, page4, page5, page6];
 
         embeds.map((embed, index) => {
-            embed.footer = {text: `Pages: ${index + 1}/${embeds.length}`}
-        }); 
+            embed.footer = { text: `Pages: ${index + 1}/${embeds.length}` };
+        });
 
         ButtonPagination(client, interaction, embeds, 15000);
     },

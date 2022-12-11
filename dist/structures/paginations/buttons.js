@@ -76,7 +76,14 @@ function ButtonPagination(client, interaction, embeds, timeout) {
                         var _a;
                         return (0, tslib_1.__generator)(this, function (_b) {
                             switch (_b.label) {
-                                case 0: return [4, b.deferUpdate()];
+                                case 0:
+                                    if (b.member.id != interaction.member.id) {
+                                        return [2, b.createMessage({
+                                                content: "It's not for you!",
+                                                flags: 64,
+                                            })];
+                                    }
+                                    return [4, b.deferUpdate()];
                                 case 1:
                                     _b.sent();
                                     _a = b.data.custom_id;
@@ -160,12 +167,12 @@ function ButtonPagination(client, interaction, embeds, timeout) {
                                     _b.sent();
                                     return [3, 17];
                                 case 17:
-                                    timeout += 9000;
+                                    timeout += 5000;
                                     return [2];
                             }
                         });
                     }); };
-                    client.on('interactionCreate', collector);
+                    client.on('interaction', collector);
                     setTimeout(function () { return (0, tslib_1.__awaiter)(_this, void 0, void 0, function () {
                         return (0, tslib_1.__generator)(this, function (_a) {
                             switch (_a.label) {
@@ -176,8 +183,7 @@ function ButtonPagination(client, interaction, embeds, timeout) {
                                     return [4, interaction.editOriginalMessage({ components: [allbuttons] })];
                                 case 1:
                                     _a.sent();
-                                    client.off('interactionCreate', collector);
-                                    console.log('Collector ended!');
+                                    client.off('interaction', collector);
                                     return [2];
                             }
                         });

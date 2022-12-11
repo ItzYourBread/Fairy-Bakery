@@ -6,6 +6,10 @@ export interface IUser extends Document {
         time: number;
         streak: number;
     };
+    storage: {
+        level: number;
+        space: number;
+    };
     bakeries: {
         miniBreads: number;
     };

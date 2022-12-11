@@ -7,7 +7,8 @@
     },
     "colour": {
         "embed": "0xFFCF80",
-        "danger": "0xFF3434"
+        "success": "0x33FF96",
+        "danger": "0xFF5353"
     },
     "emoji": {
         "coin": "🪙",

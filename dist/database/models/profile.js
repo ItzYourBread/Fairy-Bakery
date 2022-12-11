@@ -10,6 +10,10 @@ var Profile = new mongoose_1.Schema({
         time: { type: Date, default: new Date() },
         streak: { type: Number, default: 0 },
     },
+    storage: {
+        level: { type: Number, default: 1 },
+        space: { type: Number, default: 2 },
+    },
     bakeries: {
         miniBreads: { type: Number, default: 0 },
     },

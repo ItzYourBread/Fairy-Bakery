@@ -31,6 +31,11 @@ exports.default = {
                             inline: false,
                         },
                         {
+                            name: '</stove:0>',
+                            value: 'View stove, Upgrade stove',
+                            inline: false,
+                        },
+                        {
                             name: '</daily:0>',
                             value: 'Get your daily reward',
                             inline: false,
@@ -41,17 +46,12 @@ exports.default = {
                             inline: false,
                         },
                     ],
-                    footer: {}
+                    footer: {},
                 },
                 {
                     title: 'Help & Commands',
                     color: Number(index_1.config.colour.embed),
                     fields: [
-                        {
-                            name: '</profile:0>',
-                            value: 'View profile',
-                            inline: false,
-                        },
                         {
                             name: '</ping:0>',
                             value: 'Ping pong',
@@ -63,7 +63,7 @@ exports.default = {
                             inline: false,
                         },
                     ],
-                    footer: {}
+                    footer: {},
                 },
             ];
             pages.map(function (embed, index) {

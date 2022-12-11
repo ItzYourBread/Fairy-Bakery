@@ -8,6 +8,10 @@ export interface IUser extends Document {
         time: number;
         streak: number;
     };
+    storage: {
+        level: number;
+        space: number;
+    };
     bakeries: {
         miniBreads: number;
     };
@@ -27,6 +31,10 @@ const Profile: Schema = new Schema({
     daily: {
         time: { type: Date, default: new Date() },
         streak: { type: Number, default: 0 },
+    },
+    storage: {
+        level: { type: Number, default: 1 },
+        space: { type: Number, default: 2 },
     },
     bakeries: {
         miniBreads: { type: Number, default: 0 },

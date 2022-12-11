@@ -28,6 +28,11 @@ export default {
                         inline: false,
                     },
                     {
+                        name: '</stove:0>',
+                        value: 'View stove, Upgrade stove',
+                        inline: false,
+                    },
+                    {
                         name: '</daily:0>',
                         value: 'Get your daily reward',
                         inline: false,
@@ -38,17 +43,12 @@ export default {
                         inline: false,
                     },
                 ],
-                footer: {}
+                footer: {},
             },
             {
                 title: 'Help & Commands',
                 color: Number(config.colour.embed),
                 fields: [
-                    {
-                        name: '</profile:0>',
-                        value: 'View profile',
-                        inline: false,
-                    },
                     {
                         name: '</ping:0>',
                         value: 'Ping pong',
@@ -60,13 +60,13 @@ export default {
                         inline: false,
                     },
                 ],
-                footer: {}
+                footer: {},
             },
         ];
-		
+
         pages.map((embed, index) => {
-            embed.footer = {text: `Pages: ${index + 1}/${pages.length}`}
-        }); 
+            embed.footer = { text: `Pages: ${index + 1}/${pages.length}` };
+        });
 
         ButtonPagination(client, interaction, pages, 35000);
     },

@@ -2,6 +2,7 @@
     "bakeries": [
         {
             "name": "Mini Bread",
+            "space": 0,
             "price": "50",
             "emoji": "miniBread",
             "value": "miniBreads"
