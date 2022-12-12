@@ -4,6 +4,7 @@ import mongoose, { Schema, Document } from 'mongoose';
 export interface IUser extends Document {
     id: string;
     coin: number;
+    heart: number;
     daily: {
         time: number;
         streak: number;
@@ -28,6 +29,7 @@ export interface IUser extends Document {
 const Profile: Schema = new Schema({
     id: { type: String, unique: true, required: true },
     coin: { type: Number, default: 100 },
+    heart: { type: Number, default: 0 },
     daily: {
         time: { type: Date, default: new Date() },
         streak: { type: Number, default: 0 },

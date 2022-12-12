@@ -6,6 +6,7 @@ var mongoose_1 = (0, tslib_1.__importStar)(require("mongoose"));
 var Profile = new mongoose_1.Schema({
     id: { type: String, unique: true, required: true },
     coin: { type: Number, default: 100 },
+    heart: { type: Number, default: 0 },
     daily: {
         time: { type: Date, default: new Date() },
         streak: { type: Number, default: 0 },

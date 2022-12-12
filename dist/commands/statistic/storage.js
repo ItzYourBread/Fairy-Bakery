@@ -166,7 +166,7 @@ exports.default = {
                                         })];
                                 case 1:
                                     _a.sent();
-                                    client.on('interactionCreate', collector_1);
+                                    client.off('interactionCreate', collector_1);
                                     return [2];
                             }
                         });

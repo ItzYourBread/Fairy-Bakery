@@ -1,11 +1,12 @@
 import { Constants, Client, CommandInteraction } from 'eris';
 import { User } from '../../database/models/profile';
 import { config } from '../../structures/index';
+import { SmallNumber } from 'stubby.ts';
 
 export default {
     data: {
         name: 'balance',
-        description: 'Cash!!!',
+        description: 'Your balance',
         options: [
             {
                 name: 'user',
@@ -23,10 +24,23 @@ export default {
         const user = await client.users.get(user_id);
         const Data =
             (await User.findOne({ id: user_id })) || new User({ id: user_id });
-        await interaction.createMessage({
-            content: `**${user.username}** has ${
-                config.emoji.coin
-            }\`${Data.coin.toLocaleString()}\` coin `,
-        });
+
+        let balance = {
+            title: `${user.username}'s Balance`,
+            color: Number(config.colour.embed),
+            description: '',
+            timestamp: new Date(),
+        };
+
+        balance.description += `${config.emoji.coin}${SmallNumber(
+            Data.coin,
+            Data.coin.toString().length + 1
+        )} ** **`;
+        balance.description += `${config.emoji.heart}${SmallNumber(
+            Data.heart,
+            Data.heart.toString().length + 1
+        )} ** **`;
+
+        await interaction.createMessage({ embeds: [balance] });
     },
 };

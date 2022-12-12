@@ -153,12 +153,12 @@ export async function ButtonPagination(
         }
         timeout += 5000;
     };
-    client.on('interaction', collector);
+    client.on('interactionCreate', collector);
     setTimeout(async () => {
         allbuttons.components.map((d) => {
             d.disabled = true;
         });
         await interaction.editOriginalMessage({ components: [allbuttons] });
-        client.off('interaction', collector);
+        client.off('interactionCreate', collector);
     }, timeout);
 }

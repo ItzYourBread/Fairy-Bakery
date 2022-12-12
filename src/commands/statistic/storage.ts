@@ -152,7 +152,7 @@ export default {
                 await interaction.editOriginalMessage({
                     components: [buttons],
                 });
-                client.on('interactionCreate', collector);
+                client.off('interactionCreate', collector);
             }, 30000);
         }
     },

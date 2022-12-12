@@ -172,7 +172,7 @@ function ButtonPagination(client, interaction, embeds, timeout) {
                             }
                         });
                     }); };
-                    client.on('interaction', collector);
+                    client.on('interactionCreate', collector);
                     setTimeout(function () { return (0, tslib_1.__awaiter)(_this, void 0, void 0, function () {
                         return (0, tslib_1.__generator)(this, function (_a) {
                             switch (_a.label) {
@@ -183,7 +183,7 @@ function ButtonPagination(client, interaction, embeds, timeout) {
                                     return [4, interaction.editOriginalMessage({ components: [allbuttons] })];
                                 case 1:
                                     _a.sent();
-                                    client.off('interaction', collector);
+                                    client.off('interactionCreate', collector);
                                     return [2];
                             }
                         });
