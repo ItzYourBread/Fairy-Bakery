@@ -11,6 +11,15 @@ export interface IUser extends Document {
         level: number;
         space: number;
     };
+    stove: {
+        first: {
+            level: number;
+            status: boolean;
+            timer: number;
+            date: number;
+            bakery: string;
+        };
+    };
     bakeries: {
         miniBreads: number;
     };

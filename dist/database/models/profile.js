@@ -15,6 +15,15 @@ var Profile = new mongoose_1.Schema({
         level: { type: Number, default: 1 },
         space: { type: Number, default: 2 },
     },
+    stove: {
+        first: {
+            level: { type: Number, default: 1 },
+            status: { type: Boolean, default: true },
+            timer: { type: Number, default: 0 },
+            date: { type: Date, default: new Date() },
+            bakery: { type: String },
+        },
+    },
     bakeries: {
         miniBreads: { type: Number, default: 0 },
     },

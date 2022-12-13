@@ -13,6 +13,15 @@ export interface IUser extends Document {
         level: number;
         space: number;
     };
+    stove: {
+        first: {
+            level: number;
+            status: boolean;
+            timer: number;
+            date: number;
+            bakery: string;
+        };
+    };
     bakeries: {
         miniBreads: number;
     };
@@ -37,6 +46,15 @@ const Profile: Schema = new Schema({
     storage: {
         level: { type: Number, default: 1 },
         space: { type: Number, default: 2 },
+    },
+    stove: {
+        first: {
+            level: { type: Number, default: 1 },
+            status: { type: Boolean, default: true },
+            timer: { type: Number, default: 0 },
+            date: { type: Date, default: new Date() },
+            bakery: { type: String },
+        },
     },
     bakeries: {
         miniBreads: { type: Number, default: 0 },
